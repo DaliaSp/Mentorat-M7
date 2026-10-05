@@ -353,7 +353,7 @@ text-align: center;
 .topics {
 display: grid;
 
-grid-template-columns: 1.5fr 0.8fr 1.5fr;
+grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr) minmax(0, 1.5fr);
 
 gap: 12px 16px;
 
@@ -502,7 +502,7 @@ At 520px and below:
 
 Header becomes vertical.
 
-Topics become one column.
+Topics stay in three compact columns.
 
 Page margins become smaller.
 
@@ -517,7 +517,28 @@ flex-direction: column;
 }
 
 .topics {
-grid-template-columns: 1fr;
+grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.8fr) minmax(0, 1.15fr);
+gap: 8px;
+font-size: 12px;
+}
+
+.topic,
+.topic-date {
+min-width: 0;
+padding: 10px 0;
+}
+
+.topic {
+overflow-wrap: anywhere;
+}
+
+.topic-date {
+font-size: 11px;
+overflow-wrap: anywhere;
+}
+
+.topics-title {
+font-size: 26px;
 }
 
 .wrap {
